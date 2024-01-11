@@ -7,20 +7,6 @@ import game.Admin;
 import game.Game;
 import game.Leaderboard;
 
-/*
- * Basic game
- * Will be played in the console
- * To be done
- * 		- Learn mysql for java to store score, info, questions
- * 		- Learn javaFX to make this more presentable
- * 		- Make the thign more presentable?
- * 		- Clean up and organize code to make more sense and look better
- *
- * Miscellaneous
- * 		- How to play***
- * 		- Log in/ log out (only after mysql)
- * 		- Probably make round as private class for game, but it's really hard to see
- */
 public class Main {
 	public static void main(String[] args) {
 		Leaderboard lb = new Leaderboard();
