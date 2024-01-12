@@ -1,5 +1,5 @@
 # pirated-fight-list
-
+**MAKE SURE to import the inner folder, if you import the outer folder as project it will cause error**
 ## Overview
 A short project I made based on Fight List to practice
 Fight List is an online multiplayer game, each round the player is given a topic and they must type as many things that are associated with the topic as fast as possible
@@ -25,7 +25,6 @@ It is finished, but I will build on it as I learn more.
 2. **Import the Project into Your IDE:**
    - Open your preferred Integrated Development Environment (IDE) that supports Java SE-17.
    - Import the project into your IDE by selecting the option to import an existing project.
-   - ** MAKE SURE to import the inner folder, if you import the outer folder as project it will cause error**
    - Locate and select the downloaded project folder.
 
 3. **Configure Java SE-17:**
