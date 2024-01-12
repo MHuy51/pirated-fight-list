@@ -25,6 +25,7 @@ It is finished, but I will build on it as I learn more.
 2. **Import the Project into Your IDE:**
    - Open your preferred Integrated Development Environment (IDE) that supports Java SE-17.
    - Import the project into your IDE by selecting the option to import an existing project.
+   - This will wrap the actual project folder in another folder, so make sure to select the one inside for it to work
    - Locate and select the downloaded project folder.
 
 3. **Configure Java SE-17:**
