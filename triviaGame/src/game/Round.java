@@ -88,7 +88,7 @@ public class Round implements Serializable{
 	@SuppressWarnings("unchecked")
 	public void randomizeQuestion() {
 		ArrayList<Topic> topics = null;
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("topics.ser"))){
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("triviaGame/topics.ser"))){
 			topics = (ArrayList<Topic>) ois.readObject();
 			ois.close();
 		} catch (FileNotFoundException e) {
