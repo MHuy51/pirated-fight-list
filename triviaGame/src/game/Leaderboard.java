@@ -29,7 +29,7 @@ public class Leaderboard{
 	}
 	// Write new leader board into the file as serial
 	public void writeLeaderboard() {
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("triviaGame/leaderboard.ser"))){
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/leaderboard.ser"))){
 			oos.writeObject(games);
 			oos.close();
 		} catch (FileNotFoundException e) {
@@ -40,7 +40,7 @@ public class Leaderboard{
 	}
 	@SuppressWarnings("unchecked") 
 	public void readLeaderboard() {
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("triviaGame/leaderboard.ser"))){
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/leaderboard.ser"))){
 			games = (ArrayList<Game>) ois.readObject();
 			ois.close();
 		} catch (EOFException e) {
