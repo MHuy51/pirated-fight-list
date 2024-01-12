@@ -196,7 +196,7 @@ public class Admin {
 	}
 	// This will read the topicToAdd.txt file, and add it to the list
 	public static void readAndAddTopic() {
-		String filePath = "topicToAdd.txt", topicTitle;
+		String filePath = "data/topicToAdd.txt", topicTitle;
 		ArrayList<String> lines = new ArrayList<String>();
 		ArrayList<Topic> oldTopics = readTopics();
 		Topic newTopic = new Topic();
