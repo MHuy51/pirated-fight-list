@@ -43,7 +43,7 @@ public class Admin {
 	@SuppressWarnings("unchecked")
 	public static ArrayList<Topic> readTopics() {
 		ArrayList<Topic> topics = new ArrayList<Topic>();
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("triviaGame/topics.ser"))){
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/topics.ser"))){
 			topics = (ArrayList<Topic>) ois.readObject();
 			ois.close();
 		} catch (EOFException e) {
@@ -58,7 +58,7 @@ public class Admin {
 		return topics;
 	}
 	public static void writeTopics(ArrayList<Topic> topics) {
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("triviaGame/topics.ser"))){
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/topics.ser"))){
 			oos.writeObject(topics);
 			oos.close();
 		} catch (FileNotFoundException e) {
@@ -196,7 +196,7 @@ public class Admin {
 	}
 	// This will read the topicToAdd.txt file, and add it to the list
 	public static void readAndAddTopic() {
-		String filePath = "triviaGame/topicToAdd.txt", topicTitle;
+		String filePath = "src/topicToAdd.txt", topicTitle;
 		ArrayList<String> lines = new ArrayList<String>();
 		ArrayList<Topic> oldTopics = readTopics();
 		Topic newTopic = new Topic();
