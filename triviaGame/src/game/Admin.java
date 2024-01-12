@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -33,6 +34,10 @@ public class Admin {
 			}
 		}
 	}
+	public static String getProjectName() {
+	    String currentWorkingDirectory = Paths.get(System.getProperty("user.dir")).toString();
+	    return currentWorkingDirectory;
+	}
 	public static void displayMenu() {
 		System.out.println("ADMIN MENU");
 		System.out.println("1. Add a new topic");
@@ -43,7 +48,7 @@ public class Admin {
 	@SuppressWarnings("unchecked")
 	public static ArrayList<Topic> readTopics() {
 		ArrayList<Topic> topics = new ArrayList<Topic>();
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/topics.ser"))){
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(getProjectName()+"/topics.ser"))){
 			topics = (ArrayList<Topic>) ois.readObject();
 			ois.close();
 		} catch (EOFException e) {
@@ -58,7 +63,7 @@ public class Admin {
 		return topics;
 	}
 	public static void writeTopics(ArrayList<Topic> topics) {
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/topics.ser"))){
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(getProjectName()+"/topics.ser"))){
 			oos.writeObject(topics);
 			oos.close();
 		} catch (FileNotFoundException e) {
@@ -196,7 +201,7 @@ public class Admin {
 	}
 	// This will read the topicToAdd.txt file, and add it to the list
 	public static void readAndAddTopic() {
-		String filePath = "src/topicToAdd.txt", topicTitle;
+		String filePath = getProjectName()+"/topicToAdd.txt", topicTitle;
 		ArrayList<String> lines = new ArrayList<String>();
 		ArrayList<Topic> oldTopics = readTopics();
 		Topic newTopic = new Topic();
