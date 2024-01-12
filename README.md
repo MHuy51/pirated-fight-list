@@ -15,6 +15,7 @@ It is finished, but I will build on it as I learn more.
 
 ## Features to be added
 - To be played on an application window instead of a console
+- Make the interface to make more sense
 - Connect to online database to contain high scores and questions
 
 ## Installation
